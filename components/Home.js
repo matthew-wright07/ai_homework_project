@@ -9,6 +9,7 @@ export default function Home(){
   const [stock,setStock] = useState("")
   const [news,setNews] = useState([])
   const [loading,setLoading] = useState(true)
+  const [stockName,setStockName] = useState("")
   useEffect(()=>{
     async function getNews(){
       setLoading(true)
@@ -21,6 +22,7 @@ export default function Home(){
   },[])
   async function getData(){
     setLoading(true)
+    setStockName(stock)
     const quarterlyData = await fetch("/api/quarterly",{
       method:"POST",
       body:JSON.stringify({stock:stock})
@@ -75,7 +77,7 @@ export default function Home(){
           }
         </div>
         <div className='py-4 flex flex-col gap-4'>
-          <h1 className='font-bold text-white text-2xl'>News{stock &&quarterly.length>0?` for ${stock}`:null}</h1>
+          <h1 className='font-bold text-white text-2xl'>News{stockName.length>0?` for ${stockName}`:null}</h1>
           <div className='grid grid-cols-2 gap-4'>
             {news.map((current,index)=>{
               return (
