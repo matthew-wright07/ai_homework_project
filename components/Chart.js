@@ -45,7 +45,7 @@ export default function Chart({data,dataKeys,labelValues}){
                 }}
                 />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar type="monotone" dataKey={dataKeys[1]} fill="#6a5acd" />
+                <Bar type="monotone" dataKey={dataKeys[1]} fill="#16C8C7" />
             </BarChart >
         </ResponsiveContainer>
     )

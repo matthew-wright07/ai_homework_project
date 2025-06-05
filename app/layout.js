@@ -1,10 +1,10 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "AI Homework",
+  title: "Stock Project",
   description: "Hi!",
   icons: {
-    icon: "/ai_homework.png", // use a public path, NOT relative
+    icon: "./stock_project.svg",
   },
 };
 
